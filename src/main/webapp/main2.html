@@ -1,0 +1,88 @@
+	<!--表头-->
+							  	<tr class="tb_head">
+							    	<th colspan="2">第 一 戶</th>
+							    	<th colspan="2">第 二 戶</th>
+							    	<th colspan="2">第 三 戶</th>
+							    	<th colspan="2">第 四 戶</th>
+							    	<th colspan="2">第 五 戶</th>
+							    	<th colspan="2">第 六 戶</th>
+							    	<th rowspan="2" class="cell_row summary_data"><div>汇總</div></th>
+							  	</tr> 
+							  	<tr>
+							    	<!--分类-->
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							  	</tr>
+							  	<!--数据行-1-->
+							  	<tr class="data_col item1">
+							    	<td>{{cRow.B.arr[0][0]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[1][0]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[2][0]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[3][0]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[4][0]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[5][0]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td class="summary_data">{{cRow.B.count[0]}}</td>
+							  	</tr>
+							  	<!--数据行-2-->
+							  	<tr class="data_col_two item1">
+							    	<td>{{cRow.B.arr[0][1]}}</td>
+							    	<td>{{cRow.B.arr[1][1]}}</td>
+							    	<td>{{cRow.B.arr[2][1]}}</td>
+							    	<td>{{cRow.B.arr[3][1]}}</td>
+							    	<td>{{cRow.B.arr[4][1]}}</td>
+							    	<td>{{cRow.B.arr[5][1]}}</td>
+							    	<td class="summary_data">{{cRow.B.count[1]}}</td>
+							  	</tr>
+							  	<!--数据行-3-->
+							  	<tr class="data_col item2">
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[0][2]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[1][2]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[2][2]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[3][2]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[4][2]}}</td>
+							    	<td rowspan="2"></td>
+							    	<td>{{cRow.B.arr[5][2]}}</td>
+							    	<td class="summary_data">{{cRow.B.count[2]}}</td>
+							  	</tr>
+							  	<!--数据行-4-->
+							  	<tr class="data_col_two item2">
+							    	<td>{{cRow.B.arr[0][3]}}</td>
+							    	<td>{{cRow.B.arr[1][3]}}</td>
+							    	<td>{{cRow.B.arr[2][3]}}</td>
+							    	<td>{{cRow.B.arr[3][3]}}</td>
+							    	<td>{{cRow.B.arr[4][3]}}</td>
+							    	<td>{{cRow.B.arr[5][3]}}</td>
+							    	<td class="summary_data">{{cRow.B.count[3]}}</td>
+							  	</tr>
+							  	<!--输入框-->
+							  	<tr class="person_int">
+							    	<td colspan="4"><input type="text" onkeyup="onInput(this)" maxlength="1" class="int_item inp_4"/></td>
+							    	<td colspan="4"><input type="text" onkeyup="onInput(this)" maxlength="1" class="int_item inp_5"/></td>
+							    	<td colspan="5"><input type="text" onkeyup="onInput(this)" maxlength="1" class="int_item inp_6"/></td>
+							  	</tr>
+							  	<!--统计-->
+							  	<tr>
+							    	<td colspan="6" class="count_td">統計：<span>{{upRow.count}}</span></td>
+							    	<td colspan="7" class="count_td">實計：<span>{{upRow.realA}}</span></td>
+							  	</tr>
