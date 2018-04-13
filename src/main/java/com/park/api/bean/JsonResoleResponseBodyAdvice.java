@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
-import com.lxr.framework.long1.JsonResult;
-import com.lxr.framework.web.utils.RequestUtil;
+import com.lapi.common.bean.JsonResult;
+import com.lapi.common.utils.RequestUtil;
 
 @ControllerAdvice(basePackages = "com.park.api.controller")
 public class JsonResoleResponseBodyAdvice implements ResponseBodyAdvice{

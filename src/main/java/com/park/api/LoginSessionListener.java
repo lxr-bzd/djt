@@ -3,8 +3,9 @@ package com.park.api;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
-import com.lxr.framework.Subject;
-import com.park.api.service.SecurityService;
+
+import com.lapi.common.bean.Subject;
+import com.park.api.service.impl.SecurityServiceImpl;
 
 
 /**
@@ -24,7 +25,7 @@ public class LoginSessionListener implements HttpSessionListener {
         HttpSession session = event.getSession();  
         
         
-        Object o = session.getAttribute(SecurityService.SUBJECT_KEY);
+        Object o = session.getAttribute(SecurityServiceImpl.SUBJECT_KEY);
         
         Subject s  = null;
         

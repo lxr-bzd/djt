@@ -1,4 +1,4 @@
-package com.lxr.framework.web.utils;
+package com.lapi.common.utils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

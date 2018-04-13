@@ -1,4 +1,4 @@
-package com.park.api.service;
+package com.park.api.service.impl;
 
 
 import java.util.HashMap;
@@ -7,16 +7,15 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.lapi.common.BaseService;
+import com.lapi.common.bean.Subject;
+import com.lapi.common.utils.RequestUtil;
 import com.lxr.commons.exception.ApplicationException;
-import com.lxr.framework.Subject;
-import com.lxr.framework.WebContext;
-import com.lxr.framework.web.utils.CookieUtil;
-import com.lxr.framework.web.utils.RequestUtil;
-import com.park.api.common.BaseService;
 
 
 @Service
-public class SecurityService extends BaseService{
+public class SecurityServiceImpl implements SecurityService{
 	
 	public static final String SUBJECT_KEY = "subject";
 	
@@ -24,7 +23,7 @@ public class SecurityService extends BaseService{
 	public static final String TOKEN = "stoken";
 	
 	@Autowired
-	UserService userService;
+	UserDao userService;
 	
 	
 	Map<String, Subject> loginMap = new HashMap<String, Subject>(200);

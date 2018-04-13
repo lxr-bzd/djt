@@ -1,7 +1,7 @@
 package com.park.api.common.exception;
 
+import com.lapi.common.BaseController;
 import com.lxr.commons.exception.ApplicationException;
-import com.park.api.common.BaseController;
 
 public class OptimisticLockException extends ApplicationException{
 

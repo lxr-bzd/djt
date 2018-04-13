@@ -1,7 +1,7 @@
 package com.park.api.interceptor;
 
 
-import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;  
 import org.slf4j.Logger;  
 import org.slf4j.LoggerFactory;  
@@ -9,12 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;  
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import com.alibaba.fastjson.JSONObject;
-import com.lxr.framework.long1.JsonResult;
+import com.lapi.common.bean.JsonResult;
 import com.park.api.ServiceManage;
 import com.park.api.bean.JsonResoleResponseBodyAdvice;
 import com.park.api.common.exception.TransmittalException;
-import com.park.api.service.SecurityService;
-import com.park.api.service.UserService;
+import com.park.api.service.impl.SecurityServiceImpl;
  
   
   
@@ -26,16 +25,13 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
     private static final Logger log = LoggerFactory.getLogger(LoginInterceptor.class);   
     
     @Autowired
-    SecurityService securityService;
+    SecurityServiceImpl securityService;
      
     @Autowired
     ServiceManage serviceManage;
     
     @Autowired
     JsonResoleResponseBodyAdvice jsonResoleResponseBodyAdvice;
-    
-    @Autowired
-    UserService userService;
     
     /**  
      * 在业务处理器处理请求之前被调用  
@@ -62,12 +58,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
               return false;
     	  }
     	  
-    	  if(userService.isLock(securityService.getSessionSubject().getAccount())) {
-    		  response.setContentType("text/html;charset=UTF-8");
-              response.getWriter().print(JSONObject.toJSONString(JsonResult.getResult(JsonResult.STATUS_LOCK,"账号已锁定，请联系管理员")));
-              return false;
-    		  
-    	  }
+    	 
        	   return true;
     	  
     	  

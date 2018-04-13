@@ -1,4 +1,4 @@
-package com.lxr.framework.long1;
+package com.lapi.common.bean;
 
 public class JsonResult {
 	//业务处理错误
@@ -11,6 +11,8 @@ public class JsonResult {
 	public static final int STATUS_UN_AUTH = 5;
 	//账号锁定
 	public static final int STATUS_LOCK = 6;
+	//服务不可用
+	public static final int STATUS_UN_SERVER= 7;
 	//参数不合法
 	public static final int STATUS_INVALID_PARAMETER= 100;
 	

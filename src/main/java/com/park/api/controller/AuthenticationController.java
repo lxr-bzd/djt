@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
-import com.lxr.framework.Subject;
-import com.lxr.framework.long1.JsonResult;
+
+import com.lapi.common.BaseController;
+import com.lapi.common.bean.JsonResult;
+import com.lapi.common.bean.Subject;
 import com.park.api.ServiceManage;
-import com.park.api.common.BaseController;
 
 /**
  * 登录授权
@@ -35,7 +36,7 @@ public class AuthenticationController extends BaseController{
 		return JsonResult.getSuccessResult("登录成功");
 	}
 	
-	@RequestMapping("test1") 
+	@RequestMapping("test1")
 	public Object test(HttpServletRequest request) {
 		Map map= request.getParameterMap();
 		return new ModelAndView(new RedirectView("test2.do"), map);
@@ -43,7 +44,6 @@ public class AuthenticationController extends BaseController{
 	@RequestMapping("test2") 
 	@ResponseBody
 	public Object test2(HttpServletRequest request) {
-		
 		return JsonResult.getSuccessResult(request.getParameterMap());
 	}
 	

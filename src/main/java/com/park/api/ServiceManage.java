@@ -2,17 +2,16 @@ package com.park.api;
 
 
 import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import com.park.api.service.SecurityService;
-import com.park.api.service.UserService;
+
+import com.park.api.service.impl.SecurityServiceImpl;
 
 public class ServiceManage {
 	
 	
 	
-	public static SecurityService securityService;
+	public static SecurityServiceImpl securityService;
 	
 	public static JdbcTemplate jdbcTemplate;
 	
@@ -22,7 +21,7 @@ public class ServiceManage {
 
 	
 	 @Autowired
-	 public void setSecurityService(SecurityService s){
+	 public void setSecurityService(SecurityServiceImpl s){
 		 
 		 securityService = s;
 	 }

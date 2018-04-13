@@ -1,4 +1,4 @@
-package com.park.api.common;
+package com.lapi.common;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,12 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestClientException;
+
+import com.lapi.common.bean.JsonResult;
 import com.lxr.commons.exception.ApplicationException;
 import com.lxr.commons.exception.CallException;
 import com.lxr.commons.exception.CheckException;
-import com.lxr.framework.long1.JsonResult;
 import com.park.api.common.exception.JoggleThirdPartyException;
-import com.park.api.service.SecurityService;
+import com.park.api.service.impl.SecurityServiceImpl;
 
 
 
@@ -28,7 +29,7 @@ public class BaseController{
 	static Logger logger = LoggerFactory.getLogger(BaseController.class);
 	
 	@Autowired
-	public SecurityService securityService;
+	public SecurityServiceImpl securityService;
 	
 	@ExceptionHandler
 	@ResponseBody
