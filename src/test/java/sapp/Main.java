@@ -1,17 +1,31 @@
 package sapp;
 
 import java.awt.Font;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.InetAddress;
+import java.net.URLDecoder;
+import java.text.MessageFormat;
 
-import javax.swing.JButton;
+import javax.enterprise.inject.New;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 
+import com.lxr.pay.wxpay.utils.MsgType;
+
+
 public class Main {
 
     public static void main(String[] args) throws Exception {
+    	
+    	
         // 1. 创建一个顶层容器（窗口）
         JFrame jf = new JFrame("查看url");          // 创建窗口
         jf.setSize(600, 250);                       // 设置窗口大小
@@ -25,8 +39,7 @@ public class Main {
         JTextArea btn = new JTextArea();
         btn.setFont(new Font("宋体",Font.PLAIN,18));
         String ip = getLocalIP();
-        btn.setText("请保证在服务器运行这个程序，才能获取正确的路径\n"+"前台路径：http://"+ip+":8080/djt/login.html"
-        		+"\n后台路径：http://"+ip+":8080/djt");
+        btn.setText(MessageFormat.format(getMsg(), ip));
         panel.add(btn);
         // 4. 把 面板容器 作为窗口的内容面板 设置到 窗口
         jf.setContentPane(panel);
@@ -42,7 +55,48 @@ public class Main {
     	  return localIP;  
     	  }  
     
+    public static String getMsg() {
+    	String jarPath = Main.class.getProtectionDomain().getCodeSource().getLocation().getPath();
     
+    	
+    	String msg = null;
     
+    	try {
+    		jarPath = URLDecoder.decode(jarPath,"utf-8");
+        	if(new File(jarPath).isFile())jarPath = new File(jarPath).getParent();
+        	
+        	String path = new File(jarPath,"msg.txt").getPath();
+    	msg = readFile(path);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	if(msg!=null) return msg;
+    	
+  	 return "请保证在服务器运行这个程序，才能获取正确的路径\n"
+  	 		+ "前台路径：http://{0}:8080/djt/login.html"
+     		+"\n后台路径：http://{0}:8080/djt-back-manage";
+  	 
+  	  }  
+    
+    private static String readFile(String filepath) throws FileNotFoundException, IOException {
+    	  StringBuilder sb = new StringBuilder();
+    	  String s ="";
+    	  BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filepath), "utf-8"));
+
+    	  while( (s = br.readLine()) != null) {
+    	  sb.append(s + "\n");
+    	  }
+
+    	  br.close();
+    	  String str = sb.toString();
+    	  
+    	  
+    	  return str;
+    	 }
 
 }

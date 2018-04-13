@@ -3,12 +3,12 @@
 <mapper namespace="com.park.api.dao.TmplDao">
 	  
 	 <select id="getTmplNum" resultType="int" >
- select count(1) from djt_data_base where  d_id>0 AND d_id&lt;103
+ select count(1) from djt_data_base where d_tabl_num=#{group} AND d_rownum>0 AND d_rownum&lt;103
  </select>
  
   	
   	 <select id="findTmpl" resultType="com.park.api.entity.Tmpl" >
- 		select d_id id,d_data tgroup from djt_data_base 
+ 		select d_rownum id,d_data tgroup from djt_data_base where d_tabl_num=#{group}
   	</select>
   	
  </mapper>

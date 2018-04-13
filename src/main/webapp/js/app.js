@@ -18,6 +18,7 @@ $app.request = function(url,call,param){
 		}, 
 		success: function(data, textStatus){
 			if(data&&data.code==5)window.location.href = $app.loginUrl;
+			if(data&&data.code==7){$app.alert(data.msg); return;}
 			call(data,textStatus);
 		}, 
 		complete: function(XMLHttpRequest, textStatus){ 
@@ -62,7 +63,6 @@ $app.prompt = function(title,call,formType){
 }
 
 $app.msg = function(msg){
-	
 	layer.msg(msg);
 }
 

@@ -26,6 +26,8 @@ public interface CrowDao {
 	 void save(@Param("mo")Crow mo);
 	 
 	 
+	 Integer getGroup();
+	 
 	 
 	 
 	 

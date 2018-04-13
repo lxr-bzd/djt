@@ -8,4 +8,6 @@ public interface UserService {
 	
 	boolean isLock(String account);
 	
+	String getLockInfo(String account);
+	
 }

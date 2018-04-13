@@ -27,8 +27,6 @@ public class GameCoreService {
 		}
 		
 		return new int[]{allcount,allrealA,allrealB};
-		
-
 	}
 	
 	public String reckonDui(String sheng,String pei) {

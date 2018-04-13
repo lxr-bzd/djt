@@ -18,7 +18,6 @@ public class JsonResoleResponseBodyAdvice implements ResponseBodyAdvice{
 	public boolean supports(MethodParameter returnType, Class converterType) {
 		
 			return true;
-	
 	}
 
 	@Override

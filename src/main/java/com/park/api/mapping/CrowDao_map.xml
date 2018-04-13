@@ -45,9 +45,13 @@ select * from djt_g_game where uid = #{uid} AND pei is not null ORDER BY crow DE
   	
   	
   	<insert id="save">
-  	INSERT INTO djt_g_game(uid, crow, sheng) VALUES (#{mo.uid}, #{mo.crow}, #{mo.sheng});
-  	
+  	INSERT INTO djt_g_game(uid, crow, sheng) VALUES (#{mo.uid}, #{mo.crow}, #{mo.sheng})
   	</insert>
+  	
+  	
+  	<select id="getGroup" resultType="int" >
+  	 select d_table_id from djt_use_table where d_use_default =1
+  	</select>
   	
  </mapper>
  

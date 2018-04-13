@@ -62,9 +62,10 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
               return false;
     	  }
     	  
-    	  if(userService.isLock(securityService.getSessionSubject().getAccount())) {
+    	  String lockInfo = userService.getLockInfo(securityService.getSessionSubject().getAccount());
+    	  if(lockInfo!=null) {
     		  response.setContentType("text/html;charset=UTF-8");
-              response.getWriter().print(JSONObject.toJSONString(JsonResult.getResult(JsonResult.STATUS_LOCK,"账号已锁定，请联系管理员")));
+              response.getWriter().print(JSONObject.toJSONString(JsonResult.getResult(JsonResult.STATUS_LOCK,lockInfo)));
               return false;
     		  
     	  }

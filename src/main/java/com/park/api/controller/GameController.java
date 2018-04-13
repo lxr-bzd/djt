@@ -22,8 +22,6 @@ public class GameController extends BaseController{
 	GameCoreService gameCoreService;
 	
 	
-	
-	
 	@RequestMapping("input")
 	@ResponseBody
 	public Object input(String pei) {
@@ -50,9 +48,7 @@ public class GameController extends BaseController{
 	public Object newly() {
 		
 		String uid = ServiceManage.securityService.getSessionSubject().getId().toString();
-		
 		gameService.donewly(uid);
-		
 		return JsonResult.getSuccessResult();
 	}
 	

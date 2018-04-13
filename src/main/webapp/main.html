@@ -10,7 +10,7 @@
 		<script src="jslib/layer/layer.js"></script>
 		<script type="text/javascript" src="js/template-web.js"></script>
 	</head>
-	<body style="overflow-x: auto; ">
+	<body class="bg-grey">
 		<!--前台表-->
 		<section class="reception_wrap">
 			<div class="reception_box">
@@ -19,9 +19,112 @@
 					<tr>
 						<!--A表-->
 						<td colspan="14" class="table_top">
-							<table border="1">
+							<table border="0" class="rec-table-one">
 							  	<caption>計算表  A</caption>
+							  	<!--表头-->
 							  	<tbody id="group_a1">
+							  	<tr class="tb_head">
+							    	<th class="rec_num"><div>序號</div></th>
+							    	<th colspan="2">第 一 戶</th>
+							    	<th colspan="2">第 二 戶</th>
+							    	<th colspan="2">第 三 戶</th>
+							    	<th colspan="2">第 四 戶</th>
+							    	<th colspan="2">第 五 戶</th>
+							    	<th colspan="2">第 六 戶</th>
+							    	<th rowspan="2" class="cell_row summary_data"><div>汇總</div></th>
+							  	</tr> 
+							  	<tr>
+							  		<!--序号-->
+							    	<td rowspan="5" class="rec_num">---</td>
+							    	<!--分类-->
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							  	</tr>
+							  	<!--数据行-1-->
+							  	<tr class="data_col item1">
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td class="summary_data">--</td>
+							  	</tr>
+							  	<!--数据行-2-->
+							  	<tr class="data_col_two item1">
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td class="summary_data">--</td>
+							  	</tr>
+							  	<!--数据行-3-->
+							  	<tr class="data_col item2">
+							    	<td rowspan="2"></td>
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td>0</td>
+							    	<td rowspan="2"></td>
+							    	<td></td>
+							    	<td class="summary_data">--</td>
+							  	</tr>
+							  	<!--数据行-4-->
+							  	<tr class="data_col_two item2">
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td class="summary_data">--</td>
+							  	</tr>
+							  	<!--输入框-->
+							  	<tr class="person_int">
+							    	<td class="bo_num">---</td>
+							    	<td colspan="4"><input type="text" maxlength="1" autofocus="autofocus" class="int_item inp_1" placeholder="请输入"/></td>
+							    	<td colspan="4"><input type="text" maxlength="1" class="int_item inp_2" placeholder="请输入"/></td>
+							    	<td colspan="5"><input type="text" maxlength="1" class="int_item inp_3" placeholder="请输入"/></td>
+							  	</tr>
+							  	<!--统计-->
+							  	<tr>
+							    	<td class="count_num">---</td>
+							    	<td colspan="6" class="count_td">統計：<span>--</span></td>
+							    	<td colspan="7" class="count_td">實計：<span>--</span></td>
+							  	</tr>
+							  	</tbody>
+							</table>
+						
+						
+						</td>
+						<!--B表-->
+						<td colspan="13" class="table_top">
+							<table border="1" class="rec-table-two">
+							  	<caption>計算表  B</caption>
+							  	 <tbody id="group_b">
 							  	<!--表头-->
 							  	<tr class="tb_head">
 							    	<th class="rec_num"><div>序號</div></th>
@@ -37,192 +140,97 @@
 							  		<!--序号-->
 							    	<td rowspan="5" class="rec_num">---</td>
 							    	<!--分类-->
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
 							  	</tr>
 							  	<!--数据行-1-->
 							  	<tr class="data_col item1">
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td class="summary_data">0</td>
+							    	<td class="summary_data">--</td>
 							  	</tr>
 							  	<!--数据行-2-->
 							  	<tr class="data_col_two item1">
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td class="summary_data">0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td class="summary_data">--</td>
 							  	</tr>
 							  	<!--数据行-3-->
 							  	<tr class="data_col item2">
 							    	<td rowspan="2"></td>
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td></td>
+							    	<td>0</td>
 							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td class="summary_data">0</td>
+							    	<td>0</td>
+							    	<td class="summary_data">--</td>
 							  	</tr>
 							  	<!--数据行-4-->
 							  	<tr class="data_col_two item2">
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td class="summary_data">0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td>0</td>
+							    	<td class="summary_data">--</td>
 							  	</tr>
 							  	<!--输入框-->
 							  	<tr class="person_int">
 							    	<td class="bo_num">---</td>
-							    	<td colspan="4"><input type="text" maxlength="1" autofocus="autofocus" class="int_item inp_1"/></td>
-							    	<td colspan="4"><input type="text" maxlength="1" class="int_item inp_2"/></td>
-							    	<td colspan="5"><input type="text" maxlength="1" class="int_item inp_3"/></td>
+							    	<td colspan="4"><input type="text" maxlength="1" autofocus="autofocus" class="int_item inp_4" placeholder="请输入"/></td>
+							    	<td colspan="4"><input type="text" maxlength="1" class="int_item inp_5" placeholder="请输入"/></td>
+							    	<td colspan="5"><input type="text" maxlength="1" class="int_item inp_6" placeholder="请输入"/></td>
 							  	</tr>
 							  	<!--统计-->
 							  	<tr>
 							    	<td class="count_num">---</td>
-							    	<td colspan="6" class="count_td">統計：<span></span></td>
-							    	<td colspan="7" class="count_td">實計：<span></span></td>
-							  	</tr>
-							  	</tbody>
-							</table>
-						</td>
-						<!--B表-->
-						<td colspan="13" class="table_top table-b">
-							<table border="1">
-							  	<caption>計算表  B</caption> 
-							  <tbody id="group_b">
-							  	<!--表头-->
-							  	<tr class="tb_head">
-							    	<th colspan="2">第 一 戶</th>
-							    	<th colspan="2">第 二 戶</th>
-							    	<th colspan="2">第 三 戶</th>
-							    	<th colspan="2">第 四 戶</th>
-							    	<th colspan="2">第 五 戶</th>
-							    	<th colspan="2">第 六 戶</th>
-							    	<th rowspan="2" class="cell_row summary_data"><div>汇總</div></th>
-							  	</tr> 
-							  	<tr>
-							    	<!--分类-->
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							  	</tr>
-							  	<!--数据行-1-->
-							  	<tr class="data_col item1">
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td class="summary_data">0</td>
-							  	</tr>
-							  	<!--数据行-2-->
-							  	<tr class="data_col_two item1">
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td class="summary_data">0</td>
-							  	</tr>
-							  	<!--数据行-3-->
-							  	<tr class="data_col item2">
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td rowspan="2"></td>
-							    	<td></td>
-							    	<td class="summary_data">0</td>
-							  	</tr>
-							  	<!--数据行-4-->
-							  	<tr class="data_col_two item2">
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td></td>
-							    	<td class="summary_data">0</td>
-							  	</tr>
-							  	<!--输入框-->
-							  	<tr class="person_int">
-							    	<td colspan="4"><input type="text" maxlength="1" class="int_item inp_4"/></td>
-							    	<td colspan="4"><input type="text" maxlength="1" class="int_item inp_5"/></td>
-							    	<td colspan="5"><input type="text" maxlength="1" class="int_item inp_6"/></td>
-							  	</tr>
-							  	<!--统计-->
-							  	<tr>
-							    	<td colspan="6" class="count_td">統計：<span></span></td>
-							    	<td colspan="7" class="count_td">實計：<span></span></td>
+							    	<td colspan="6" class="count_td">統計：<span>--</span></td>
+							    	<td colspan="7" class="count_td">實計：<span>--</span></td>
 							  	</tr>
 							  	</tbody>
 							</table>
 						</td>
 					</tr>
-					<!--功能-->
-					<tr class="funtr_td">
-						<td class="bo_num">功能</td>
-						<td colspan="8" class="refresh_btn unselectable">刷新</td>
-						<td colspan="9" class="sure_btn unselectable" onclick="onOk();">確定</td>
-						<td colspan="9" class="exit_btn unselectable">關閉</td>
-					</tr>
+					
 				</table>
+				<!--功能-->
+				<div class="clearfix funtr_td jus-a ali-c">
+					<div class="refresh_btn unselectable">刷新</div>
+					<div class="sure_btn unselectable" onclick="onOk();">確定</div>
+					<div class="exit_btn unselectable">關閉</div>
+				</div>
+			
 			</div>
 		</section>
 		
@@ -329,8 +337,6 @@
 		
 		
 		function ref(data){
-			
-			
 			if(data=="def"){
 				$("#group_a1").html($("#tem_a1").html());
 				$("#group_a2").html($("#tem_a2").html());
@@ -544,9 +550,8 @@
 		
 		
 		<script type="text/html" id="tem_a1">
-			
-	<!--表头-->
-							  	<tr class="tb_head">
+
+		<tr class="tb_head">
 							    	<th class="rec_num"><div>序號</div></th>
 							    	<th colspan="2">第 一 戶</th>
 							    	<th colspan="2">第 二 戶</th>
@@ -560,20 +565,21 @@
 							  		<!--序号-->
 							    	<td rowspan="5" class="rec_num">{{cRow.crow}}</td>
 							    	<!--分类-->
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
 							  	</tr>
-							  	<!--数据行-1-->
+
+							<!--数据行-1-->
 							  	<tr class="data_col item1">
 							    	<td>{{cRow.A.arr[0][0]}}</td>
 							    	<td rowspan="2"></td>
@@ -589,7 +595,8 @@
 							    	<td rowspan="2"></td>
 							    	<td class="summary_data">{{cRow.A.count[0]}}</td>
 							  	</tr>
-							  	<!--数据行-2-->
+							 
+ 	<!--数据行-2-->
 							  	<tr class="data_col_two item1">
 							    	<td>{{cRow.A.arr[0][1]}}</td>
 							    	<td>{{cRow.A.arr[1][1]}}</td>
@@ -625,7 +632,7 @@
 							    	<td>{{cRow.A.arr[5][3]}}</td>
 							    	<td class="summary_data">{{cRow.A.count[3]}}</td>
 							  	</tr>
-							  	<!--输入框-->
+<!--输入框-->
 							  	<tr class="person_int">
 							    	<td class="bo_num">{{cRow.crow}}</td>
 							    	<td colspan="4"><input type="text" onkeyup="onInput(this)" maxlength="1" autofocus="autofocus" class="int_item inp_1"/></td>
@@ -638,15 +645,15 @@
 							    	<td colspan="6" class="count_td">統計：<span>{{upRow.count}}</span></td>
 							    	<td colspan="7" class="count_td">實計：<span>{{upRow.realA}}</span></td>
 							  	</tr>
-
-
 							    
 </script>
 
 
 <script type="text/html" id="tem_b">
-	<!--表头-->
+
+							  	<!--表头-->
 							  	<tr class="tb_head">
+							    	<th class="rec_num"><div>序號</div></th>
 							    	<th colspan="2">第 一 戶</th>
 							    	<th colspan="2">第 二 戶</th>
 							    	<th colspan="2">第 三 戶</th>
@@ -656,19 +663,21 @@
 							    	<th rowspan="2" class="cell_row summary_data"><div>汇總</div></th>
 							  	</tr> 
 							  	<tr>
+							  		<!--序号-->
+							    	<td rowspan="5" class="rec_num">{{cRow.crow}}</td>
 							    	<!--分类-->
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
-							    	<td><div>老<br>少</div></td>
-							    	<td><div>男<br>女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
+							    	<td><div>老少</div></td>
+							    	<td><div>男女</div></td>
 							  	</tr>
 							  	<!--数据行-1-->
 							  	<tr class="data_col item1">
@@ -722,18 +731,21 @@
 							    	<td>{{cRow.B.arr[5][3]}}</td>
 							    	<td class="summary_data">{{cRow.B.count[3]}}</td>
 							  	</tr>
-							  	<!--输入框-->
+
+  	<!--输入框-->
 							  	<tr class="person_int">
-							    	<td colspan="4"><input type="text" onkeyup="onInput(this)" maxlength="1" class="int_item inp_4"/></td>
-							    	<td colspan="4"><input type="text" onkeyup="onInput(this)" maxlength="1" class="int_item inp_5"/></td>
-							    	<td colspan="5"><input type="text" onkeyup="onInput(this)" maxlength="1" class="int_item inp_6"/></td>
+							    	<td class="bo_num">{{cRow.crow}}</td>
+							    	<td colspan="4"><input type="text" onkeyup="onInput(this)" maxlength="1" autofocus="autofocus" class="int_item inp_4" placeholder="请输入"/></td>
+							    	<td colspan="4"><input type="text" onkeyup="onInput(this)" maxlength="1" class="int_item inp_5" placeholder="请输入"/></td>
+							    	<td colspan="5"><input type="text" onkeyup="onInput(this)" maxlength="1" class="int_item inp_6" placeholder="请输入"/></td>
 							  	</tr>
 							  	<!--统计-->
 							  	<tr>
+							    	<td class="count_num">{{upRow.crow}}</td>
 							    	<td colspan="6" class="count_td">統計：<span>{{upRow.count}}</span></td>
 							    	<td colspan="7" class="count_td">實計：<span>{{upRow.realB}}</span></td>
 							  	</tr>
+
 </script>
-		
 	</body>
 </html>

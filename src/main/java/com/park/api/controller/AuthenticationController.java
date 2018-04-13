@@ -35,16 +35,15 @@ public class AuthenticationController extends BaseController{
 		return JsonResult.getSuccessResult("登录成功");
 	}
 	
-	@RequestMapping("test1") 
+	@RequestMapping("user/checkIn")
+	@ResponseBody
 	public Object test(HttpServletRequest request) {
-		Map map= request.getParameterMap();
-		return new ModelAndView(new RedirectView("test2.do"), map);
+		return JsonResult.getSuccessResult();
 	}
 	@RequestMapping("test2") 
 	@ResponseBody
 	public Object test2(HttpServletRequest request) {
-		
-		return JsonResult.getSuccessResult(request.getParameterMap());
+		return JsonResult.getSuccessResult();
 	}
 	
 	@RequestMapping("logout")

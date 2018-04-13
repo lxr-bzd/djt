@@ -56,15 +56,23 @@ public class GameService {
 			return ret;
 	}
 	
+	/*
+	 * 获取第几组
+	 */
+	private int getGroup() {
+		return crowDao.getGroup();
+	}
+	
 	
 	
 	public void donewly(String uid) {
-		if(GAME_COL!=tmplDao.getTmplNum())
+		int group = getGroup();
+		
+		if(GAME_COL!=tmplDao.getTmplNum(group))
 			throw new ApplicationException("后台模板配置错误");
 		crowDao.delete(uid);
 		
-		List<Tmpl> tmpls = tmplDao.findTmpl();
-		
+		List<Tmpl> tmpls = tmplDao.findTmpl(group);
 		List<Crow> crows = toCrows(tmpls);
 		
 		for (Crow crow : crows) {
@@ -77,10 +85,11 @@ public class GameService {
 	public List<Crow> toCrows(List<Tmpl> tmpls) {
 		Map<Integer, Crow> crows = new HashMap<>();
 		for (Tmpl tmpl : tmpls) {
-			String[] rs = tmpl.getTgroup().split(",");
+			String[] rs = tmpl.getTgroup().trim().split(",");
 			for (int i = 0; i < GAME_ROW; i++) {
 				Crow crow = getCrowByRow(i+1, crows);
 				crow.setSheng(crow.getSheng()+","+rs[i]);
+				
 			}
 		}
 		
@@ -90,8 +99,6 @@ public class GameService {
 			String str1 = crow.getSheng();
 			crow.setSheng( str1.substring(1, str1.length()));
 		}
-		
-		
 		return ret;
 	}
 	
@@ -127,7 +134,6 @@ public class GameService {
 			icrow.setGong_col(gongCol);
 			icrow.setCount(count);
 		}
-		
 		
 		Crow nCrow = getNextRow(uid, icrow.getCrow());
 		
