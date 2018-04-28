@@ -1,14 +1,15 @@
 package com.park.api.controller;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 import com.lxr.framework.Subject;
 import com.lxr.framework.long1.JsonResult;
 import com.park.api.ServiceManage;
@@ -54,7 +55,62 @@ public class AuthenticationController extends BaseController{
 	}
 	
 
-	
+	public static void main(String[] args) throws Exception {
+
+
+        String s = "少女少女老男老女少男老男,老男少女少女少男少女老男,老女少男少女少男少男老男,老男老女少男老男老女老女,老女少女老男老女少女老男,少男少男老男老女少男老男,少女少男少女少女老女少男,少女老女少女老女老男少女,老男少女老男老女老女老男,少女老女少男老男少男老男,少男老女老男老男老男老男,少女少男少男老男少女少男,少男老女老女少男老男少女,少男老男少男老女老男少男,少男少男老男少男少女少女,老女少女老女少女少女老女,老女老女少男少男老男老男,少男少男少男老男老女少男,少女老女少女老女少女少女,少男少女老男老女老男老女,老女老男少女老男少男老女,老女老男少女少女少女老女,老女少女老男老男少女少女,少男少男老男少男少女少男,少男老男少男少男少男老男,少女老女老男老男老男少男,少女少女老男少女老男老女,少女少男老男老女老女少男,老男少男少女少女老女老男,老女少男少男少女少男老男,少女少女老男老女少女少女,少男老男老男少女少男老女,少男少男少男少女少女老女,少男少女少男老男少女少女,老女少女老男少女老女少女,少女少女老女老女少女少男,少男老女少男少女老女少女,少男老女老男少男少女少女,少女少男老女老女少女少男,老女少女少男少男少女老男,少男少女少男少女少男老女,老男少男老女老男少男老女,少女老女少女老男少女少男,少男老女少女少男老男老女,少男少男少男少男少女少男,老女少男少女老男少女老女,少男老女少女老女老男少男,老女老女老男少男少男老女,老男少女少女老女少男少女,少男老男老男少女少女老女,少女少女老男老女老男少男,少男少女老女老女老男老女,老女少男老男少男少女少女,老男少女老男老女老女老女,老男老男少男少男老男老女,少女少男老男老女少女少男,少女老女老男少男少女老男,少男少女少女少男少男少男,老男老男老女少男老男少男,老男少女少男老女少女老女,老男少女老男老男老男少女,少女老女少女少男少男少男,老女少男少女老男少女少女,老女老男少女少女少男老男,少女老女少女老女少男少男,老女老男老男少男老女老女,老女老男老男老女老男老男,少女少男老男少男少女少女,少女少男老男老女少女老男,少女老男少男少男少女少男,老男老女少女少女老女老女,老男老男少女老女少女少女,老女少男少女老男少女少女,老女老男老女少女少男少男,老女少男少男少女老男老男,老男老女老女少女少女少男,少男少男少女老男老男老男,老男老男老男老女老男老男,少女老女老男老男少男老女,老男老男老女少女老女少女,少男老男少男老男老女老男,少女老女少男少男少女老男,老男少男老女少女少男少男,老女老女老男少女少女少女,老男老男少男少女少男老男,少男老女老女少男少女老女,老女老女老女老女少男少男,老男少男老女老女少男老男,老男少女老女少女少女少女,老男老男少女老女少女少女,少男少女老男少男少男老男,老女老女少男少女老女少男,老男老女少男老男老女少男,老男少女少女老女少男少女,少男老女少女老女老男老男,老男少男老男老男少男老女,少男少女少男老男少女少男,少女老男少男老女老女老女,少男老女老男少男老男老女,老男老女老男少男少男老女,少女老女老女少男少女老女,少女老女老女少男老男少男";
+
+       
+
+        //创建一个Map 用于存储数据
+
+        Map<String,Integer>map = new HashMap<String,Integer>();
+
+         
+
+        //将字符与出现次数联系
+
+        for(int i = 0; i < s.length(); i++){
+
+             String perStr = s.substring(i, i+1);
+
+             if(map.containsKey(perStr)){
+
+                  Integer num = map.get(perStr);
+
+                  map.put(perStr, num + 1);
+
+             }else{
+
+                  map.put(perStr, 1);
+
+             }
+
+        }
+
+        //用map输出的两种格式
+
+        Set<Map.Entry<String,Integer>> set= map.entrySet();
+
+        for(Map.Entry<String,Integer> entry: set){
+
+             System.out.println(entry.getKey()+ ":" + entry.getValue());
+
+        }
+
+        System.out.println("=======================");
+
+        Set<String>keys = map.keySet();
+
+        for(String key : keys){
+
+             System.out.println(key + "--->"+ map.get(key));
+
+        }
+
+    }
+
+
 	
 	
 }

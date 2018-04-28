@@ -40,7 +40,7 @@ select * from djt_g_game where uid = #{uid} AND pei is not null ORDER BY crow DE
  
 
   	 <select id="getGameNum" resultType="int" >
- select count(0) from djt_g_game where uid=#{uid}
+ 		select count(0) from djt_g_game where uid=#{uid}
   	</select>
   	
   	
@@ -52,6 +52,14 @@ select * from djt_g_game where uid = #{uid} AND pei is not null ORDER BY crow DE
   	<select id="getGroup" resultType="int" >
   	 select d_table_id from djt_use_table where d_use_default =1
   	</select>
+  	
+  	  <update id="setUserGroup" >
+	  UPDATE djt_user SET 
+	  djt_use_table = #{ group }
+	  
+ WHERE djt_u_id = #{uid}
+	</update>
+  	
   	
  </mapper>
  

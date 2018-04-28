@@ -43,9 +43,9 @@ public class UserServiceImpl implements UserService{
 Integer islock = ServiceManage.jdbcTemplate.queryForObject("select djt_islock from djt_user where djt_u_name = ?",Integer.class, account);
 		
 		if(islock!=null&&islock==2)return "账号已锁定，请联系管理员";
-Integer issysLock = ServiceManage.jdbcTemplate.queryForObject("select djt_sys_islock from djt_user where djt_u_name = ?",Integer.class, account);
+/*Integer issysLock = ServiceManage.jdbcTemplate.queryForObject("select djt_sys_islock from djt_user where djt_u_name = ?",Integer.class, account);
 	
-if(issysLock!=null&&issysLock==2)return "系统已锁定，时间已到，请联系管理员";
+if(issysLock!=null&&issysLock==2)return "系统已锁定，时间已到，请联系管理员";*/
 
 
 return null;

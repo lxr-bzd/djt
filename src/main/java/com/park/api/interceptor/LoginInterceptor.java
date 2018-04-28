@@ -67,7 +67,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
     		  response.setContentType("text/html;charset=UTF-8");
               response.getWriter().print(JSONObject.toJSONString(JsonResult.getResult(JsonResult.STATUS_LOCK,lockInfo)));
               return false;
-    		  
     	  }
        	   return true;
     	  

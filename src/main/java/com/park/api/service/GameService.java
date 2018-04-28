@@ -80,6 +80,9 @@ public class GameService {
 			crowDao.save(crow);
 		}
 		
+		crowDao.setUserGroup(uid, group);
+		
+		
 	}
 	
 	public List<Crow> toCrows(List<Tmpl> tmpls) {

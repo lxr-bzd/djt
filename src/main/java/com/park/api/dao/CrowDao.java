@@ -22,11 +22,13 @@ public interface CrowDao {
 	 Integer getGameNum(@Param("uid")String uid);
 
 	 
-	 
 	 void save(@Param("mo")Crow mo);
 	 
 	 
 	 Integer getGroup();
+	 
+	 
+	 void setUserGroup(@Param("uid")String uid,@Param("group")Integer group);
 	 
 	 
 	 
